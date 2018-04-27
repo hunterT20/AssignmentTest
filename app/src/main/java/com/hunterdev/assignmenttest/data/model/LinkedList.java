@@ -6,20 +6,14 @@ package com.hunterdev.assignmenttest.data.model;
 public class LinkedList {
     private Node start;
     private Node end;
-    public int size;
 
     public LinkedList() {
         this.start = null;
         this.end = null;
-        this.size = 0;
     }
 
     public boolean isEmpty() {
         return start == null;
-    }
-
-    public int getSize() {
-        return size;
     }
 
     public Node getStart() {
@@ -32,7 +26,6 @@ public class LinkedList {
 
     public void insertAtEnd(int data) {
         Node node = new Node(data, null);
-        size++;
         if (start == null) {
             start = node;
             end = start;

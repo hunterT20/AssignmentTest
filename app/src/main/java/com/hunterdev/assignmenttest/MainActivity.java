@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.hunterdev.assignmenttest.data.model.LinkedList;
-import com.hunterdev.assignmenttest.data.model.Node;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,14 +15,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        int listData[] = { 1, 2, 3, 2, 1};
+
         LinkedList linkedList = new LinkedList();
-        linkedList.insertAtEnd(1);
-        linkedList.insertAtEnd(2);
-        linkedList.insertAtEnd(3);
-        linkedList.insertAtEnd(2);
-        linkedList.insertAtEnd(3);
+
+        for (int i : listData) {
+            linkedList.insertAtEnd(i);
+        }
 
         CheckPalindrome checkPalindrome = new CheckPalindrome();
         Log.e(TAG, "Check Palindrome: " + checkPalindrome.check(linkedList.getStart()));
+
+        int arr[] = {3, 4, 5, 4, 5, 6, 7, 8, 9, 10, 9, 10, 11};
+        FindIndex findIndex = new FindIndex();
+        Log.e(TAG, "onCreate: " + findIndex.find(arr,11));
     }
 }
